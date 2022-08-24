@@ -53,11 +53,15 @@ con.connect((err) => {
 });
 
 //in get request you have req.query object
-app.get("/", homepageQueryMiddleWare, (req, res) => {
+/*app.get("/", homepageQueryMiddleWare, (req, res) => {
   con.query(`INSERT INTO Users (name, email) VALUES ('${req.query.name}', '${req.query.email}')`, (err, result) => {
     if (err) throw res.send(err);
     else res.send(`Hello ${req.query.name}. Welcome to firstDB. Your name has been entered`);
   });
+});*/
+
+app.get("/", (req, res) => {
+  res.send("Hello World");
 });
 
 //in POST request you use middleware body-parser then have req.body object
